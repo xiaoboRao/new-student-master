@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jxust.dq.student.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.jxust.dq.student.entity.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="CHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="user_class" jdbcType="INTEGER" property="userClass" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.jxust.dq.student.entity.User">
+    insert into user (id, username, password, 
+      email, phone, real_name, 
+      nick_name, sex, user_class
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{password,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=CHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{userClass,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.jxust.dq.student.entity.User">
+    update user
+    set username = #{username,jdbcType=CHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=CHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      user_class = #{userClass,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, username, password, email, phone, real_name, nick_name, sex, user_class
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUsername" parameterType="cn.jxust.dq.student.entity.User" resultMap="BaseResultMap">
+    select id, username, password, email, phone, real_name, nick_name, sex, user_class
+    from user
+    where username = #{username,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, username, password, email, phone, real_name, nick_name, sex, user_class
+    from user
+  </select>
+</mapper>
