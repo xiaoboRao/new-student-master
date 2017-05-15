@@ -128,10 +128,10 @@ function checksex(){
                 </div>
             </div>
             <div class="sig-item">
-                <div class="item-name">用户名<span class="required">*</span>
+                <div class="item-name">绰号<span class="required">*</span>
                 </div>
                 <div class="item-content">
-                    <input class="a" type="text" name="nickName" placeholder="用户名" onblur="checkCode()" />
+                    <input class="a" type="text" name="nickName" placeholder="绰号" onblur="checkCode()" />
                     <span id="checkNickname"></span>
                 </div>
             </div>

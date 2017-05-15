@@ -31,13 +31,13 @@ public class IndexController {
         String username = request.getParameter("username");
         String password = BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt());
         if (!(username != null && !username.equals(""))) {
-           return "/pages/error.jsp";
+           return "error";
         }
         User user = userService.getUserByUsername(username);
         if (BCrypt.checkpw(password,user.getPassword()))
-            return "/pages/error.jsp";
+            return "error";
         else
-            return "/pages/index.jsp";
+            return "index";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
