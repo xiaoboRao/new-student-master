@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+.header {
+	background-color: #808080;
+	color: #fff;
+}
+
+.logo {
+	padding-top: 15px;
+	padding-left: 20px;
+	margin-top: 0;
+}
+
+.main-title {
+	margin-bottom: 40px;
+}
+
+.form-inline {
+	padding-bottom: 5px;
+}
+
+.left-column, .right-column {
+	padding: 0;
+}
+
+.left-column1 {
+	background-color: #ccc;
+
+}
+
+.left-column2 {
+	background-color: #f4f4f4;
+
+}
+
+.left-column3 {
+	background-color: #2f846d;
+
+}
+.left-column4 {
+	background-color: #d5d5d5;
+
+}
+
+.right-column1 {
+	background-color: #fff;
+}
+
+.right-column21 {
+	background-color: #838383;
+	height: inherit;
+}
+
+.right-column21 > h4 {
+	margin-top: 15px;
+}
+
+.right-column22 {
+	background-color: #d2d2d2;
+}
+
+.right-column22 > textarea {
+	margin-top: 23px;
+}
+
+.right-column3 {
+	background-color: #666;
+	height: 38px;
+}
+
+.right-column41 {
+	background-color: #e3e3e3;
+	height: 100px;
+}
+
+.right-column42 {
+	background-color: #eee;
+	height: 100px;
+}
+
+h3 {
+	height: 65px;
+	line-height: 65px;
+}
+
+.signature {
+	border: 1px dashed #f11;
+}
+
+.right-column42 > textarea {
+	margin-top: 20px;
+	height: 65px;
+	line-height: 55px;
+	font-size: 20px;
+}
+
+.right-column5 {
+	background-color: #d5d5d5;
+	height: 35px;
+}
+
+.row {
+	margin: 0;
+}
+
+textarea {
+	width: 100%;
+
+	border: none;
+	background-color: inherit;
+}
+
+.tuan {
+	height: 100px;
+}
+
+.she {
+	height: 100px;
+}
+
+.zhi {
+	height: 100px;
+}
+
+.chuang {
+	height: 100px;
+}
+.zhong {
+	height: 100px;
+}
+.su {
+	height: 50px;
+}
+textarea:focus {
+	border: 1px solid #ccc;
+}
+
+
+
+
+

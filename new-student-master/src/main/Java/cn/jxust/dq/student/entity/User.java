@@ -1,23 +1,58 @@
 package cn.jxust.dq.student.entity;
 
-public class User {
+import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+
+@Service
+public class User implements Serializable{
     private Integer id;
 
     private String username;
 
     private String password;
 
+    public User(String username, String password, String email, String phone, String college, String idnumber, Byte sex, Integer classess) {
+
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.college = college;
+        this.idnumber = idnumber;
+        this.sex = sex;
+        this.classess = classess;
+    }
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", college='" + college + '\'' +
+                ", idnumber='" + idnumber + '\'' +
+                ", sex=" + sex +
+                ", classess=" + classess +
+                '}';
+    }
+
     private String email;
 
     private String phone;
 
-    private String realName;
+    private String college;
 
-    private String nickName;
+    private String idnumber;
 
     private Byte sex;
 
-    private Integer userClass;
+    private Integer classess;
 
     public Integer getId() {
         return id;
@@ -59,20 +94,20 @@ public class User {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getRealName() {
-        return realName;
+    public String getCollege() {
+        return college;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName == null ? null : realName.trim();
+    public void setCollege(String college) {
+        this.college = college == null ? null : college.trim();
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getIdnumber() {
+        return idnumber;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setIdnumber(String idnumber) {
+        this.idnumber = idnumber == null ? null : idnumber.trim();
     }
 
     public Byte getSex() {
@@ -83,22 +118,11 @@ public class User {
         this.sex = sex;
     }
 
-    public Integer getUserClass() {
-        return userClass;
+    public Integer getClassess() {
+        return classess;
     }
 
-    public void setUserClass(Integer userClass) {
-        this.userClass = userClass;
-    }
-
-    public User(String username, String password, String phone, String email, String realName, String nickName, Byte sex, int userClass) {
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.email = email;
-        this.realName = realName;
-        this.nickName = nickName;
-        this.sex = sex;
-        this.userClass = userClass;
+    public void setClassess(Integer classess) {
+        this.classess = classess;
     }
 }

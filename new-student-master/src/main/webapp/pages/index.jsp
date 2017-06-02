@@ -5,8 +5,8 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/5.0.0/normalize.min.css"/>
-    <link rel="stylesheet" href="/static/css/login.css"/>
-    <script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/login.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.11.3.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <STYLE type=text/css>
 
@@ -30,7 +30,7 @@ function checkCode(){
 		$("#checkcode").html("登录名不能为空");
 	}else{
 		$("#checkcode").removeClass("error");
-
+        $("#checkcode").html(" ");
 
 	}
 }
@@ -40,27 +40,26 @@ function checkCode(){
 <body>
 <div id="header">
     <div class="header-index">
-        <img src="/static/images/logo-big.png" alt=""/>
+        <img src="${pageContext.request.contextPath}/static/images/logo-big.png" alt=""/>
     </div>
 </div>
 <div id="container">
     <div class="main">
         <div class="login-top">
             <div class="sig-up">
-                登录<div class="register"><a href="/static/WEB-INF/pages/register.jsp">免费注册</a></div>
+                登录<div class="register"><a href="${pageContext.request.contextPath}/pages/register.jsp">免费注册</a></div>
             </div>
         </div>
         <!-- 提交则跳转到login下面的list.action页面 -->
-      <form id="login" action="login"
-	method="post" enctype="multipart/form-data">
+      <form id="login" action="${pageContext.request.contextPath}/logon1.action" method="post">
         <div class="login-center">
             <div class="user">
                 用户名<span class="required">*</span>
-                <input type="text" name="user" class="text" onblur="checkCode()"/>
+                <input type="text" name="username" class="text" onblur="checkCode()"/>
                 <span id="checkcode"></span>
             </div>
             <div class="pass">密&nbsp;码<span class="required">*</span>
-                <input type="password" name="pass" class="text"/>
+                <input type="password" name="password" class="text"/>
             </div>
             <div class="other">
                 <input type="checkbox" name="chackbox" checked="checked" class="check"/>

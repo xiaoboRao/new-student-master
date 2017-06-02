@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="new-student-master:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/new_student_master_war</output-path>
+    <root id="archive" name="new-student-master_war.war">
+      <element id="artifact" artifact-name="new-student-master:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jackson-annotations-2.4.0" />
+          <element id="library" level="project" name="commons-fileupload-1.2.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

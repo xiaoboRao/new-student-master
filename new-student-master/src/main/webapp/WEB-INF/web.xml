@@ -4,22 +4,48 @@
 		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 		 version="3.1">
 
+
+
 	<!-- Spring MVC servlet -->
+
 	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:config/mvc-dispatcher-servlet.xml</param-value>
+			<param-value>classpath*:config/mvc-dispatcher-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:config/mvc-dispatcher-servlet.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- shiro过滤器定义 -->
+	<filter>
+		<filter-name>shiroFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<!-- 该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理 -->
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiroFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<!-- 编码过滤器 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -34,5 +60,27 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!--自定义的错误跳转页面-->
+	<!--<error-page>-->
+		<!--<error-code>403</error-code>-->
+		<!--<location>/403.jsp</location>-->
+	<!--</error-page>-->
+	<!--<error-page>-->
+		<!--<error-code>404</error-code>-->
+		<!--<location>/403.jsp</location>-->
+	<!--</error-page>-->
+	<!--<error-page>-->
+		<!--<error-code>405</error-code>-->
+		<!--<location>/403.jsp</location>-->
+	<!--</error-page>-->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/500.jsp</location>
+	</error-page>
+	<!--//Circular view path 异常-->
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.html</url-pattern>
 
+	</servlet-mapping>
 </web-app>

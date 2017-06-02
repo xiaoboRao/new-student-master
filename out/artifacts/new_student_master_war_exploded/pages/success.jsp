@@ -11,5 +11,8 @@
 <body> 
 成功!
 </body>
+    <form action="${pageContext.request.contextPath}/logout.action" method="post" >
 
+    <input type="submit" value="logout">
+</form>
 </html>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-fileupload-1.2.2">
+    <CLASSES>
+      <root url="jar://E:/java就业视频/【阶段13】SpringMvc/springMVC-day02/代码/ssm0523-1/WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar!/" />
+      <root url="jar://E:/java就业视频/【阶段13】SpringMvc/springMVC-day02/代码/ssm0523-1/WebContent/WEB-INF/lib/commons-io-2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

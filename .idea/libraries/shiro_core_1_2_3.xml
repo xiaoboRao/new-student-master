@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="shiro-core-1.2.3">
+    <CLASSES>
+      <root url="jar://F:/ApacheMaven/shiro-core-1.2.3.jar!/" />
+      <root url="jar://F:/ApacheMaven/shiro-ehcache-1.2.3.jar!/" />
+      <root url="jar://F:/ApacheMaven/shiro-spring-1.2.3.jar!/" />
+      <root url="jar://F:/ApacheMaven/shiro-web-1.2.3.jar!/" />
+      <root url="jar://F:/ApacheMaven/validation-api-1.0.0.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
