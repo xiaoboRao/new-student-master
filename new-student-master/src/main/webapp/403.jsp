@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title12312312</title>
+    <title>Title123123qweqwe12</title>
 </head>
 <body>
     <h1 > 您没有权限操作，请联系管理员</h1>
